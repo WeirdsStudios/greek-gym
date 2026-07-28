@@ -1,0 +1,19 @@
+# Greek Gym
+
+> Greek Gym es una cadena de gimnasios en Puebla, México, con dos sucursales (Serdán y Zeus). Ofrece sala de pesas, clases grupales (Spinning, Ritmos Latinos, Funcional) y, en la sucursal Zeus, un menú de comida fitness llamado "Greek Food".
+
+## Sucursales
+
+- **Greek Gym Serdán**: C. 55 Nte. 2806, Ampliación Francisco I. Madero, Aquiles Serdán, 72140 Puebla. Tel: 220 275 7573. Horario: Lun–Vie 05:30–22:00, Sáb 07:00–18:00, Dom 08:00–14:00. Servicios: sala de pesas, clases de Spinning, ring de box, estacionamiento, regaderas.
+- **Greek Gym Zeus**: C. 4 Sur 714, Libertad, 72130 Heroica Puebla de Zaragoza. Tel: 220 275 7573. Horario: Lun–Vie 06:00–22:00, Sáb 07:00–18:00, Dom 08:00–14:00. Servicios: sala de pesas, clases de Spinning, Ritmos Latinos y Funcional, cafetería Greek Food, tienda, estacionamiento, regaderas.
+
+## Páginas
+
+- [Inicio](https://greekgym.mx/): Presentación de la marca, comparación de ambas sucursales, disciplinas, planes de membresía y testimonios.
+- [Sucursal Serdán](https://greekgym.mx/sucursal-serdan.html): Información detallada, horarios de clases y equipo de Greek Gym Serdán.
+- [Sucursal Zeus](https://greekgym.mx/sucursal-zeus.html): Información detallada, horarios de clases y equipo de Greek Gym Zeus.
+- [Greek Food](https://greekgym.mx/greek-food.html): Menú de comida fitness con macronutrientes (licuados proteicos, ensaladas, paninos, snacks), disponible en la sucursal Zeus y por Rappi/Subito.
+
+## Contacto
+
+Instagram: https://www.instagram.com/greek_gym_/
