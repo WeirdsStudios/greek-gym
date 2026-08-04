@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
+<link rel="icon" href="imgs/favicon.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="imgs/apple-touch-icon.png">
 <title>GREEK GYM | Forja Tu Leyenda</title>
 <meta name="description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Sala de Pesas. Únete hoy.">
 <meta name="robots" content="index, follow">
@@ -228,51 +230,9 @@ a{text-decoration:none;color:var(--gold)}
   }
 }
 
-
-/* Texto de secciones: tamaño legible */
-.sec-h{
-  font-size:clamp(1.6rem,7vw,2.5rem);}
-/* Padding de secciones reducido */
-section{
-  padding:3.5rem 5%;}
-/* Galería: items más pequeños */
-.gal-item{
-  width:160px;
-  height:210px;}
-/* Videos: altura controlada */
-.vid-card video{
-  max-height:65vw;}
-}
-
-  @media(max-width:860px){
-  /* El grid de texto+cards pasa a columna */
-  .clases-intro {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
   
-  /* Las 4 cards en 2 columnas abajo del texto */
-  .clases-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-  }
-  
-  /* Cards más bajas para que quepan */
-  .clase-card {
-    min-height: 200px;
-  }
-  
-  /* Texto de las cards más pequeño */
-  .clase-name { font-size: .85rem; }
-  .clase-tag  { font-size: .55rem; }
-  .clase-body { padding: 1rem; }
-}
 
-@media(max-width:480px){
-  .clases-grid { grid-template-columns: 1fr; }
-  .clase-card  { min-height: 160px; }
-}
+
 
 /* ── SECTION UTIL ── */
 section{padding:7rem 5%}
@@ -297,8 +257,8 @@ section{padding:7rem 5%}
 .video-card video{width:100%;aspect-ratio:9/16;object-fit:cover;opacity:.85;transition:opacity .4s;display:block}
 .video-card:hover video{opacity:1}
 .video-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,rgba(0,0,0,.2) 40%,transparent 70%);pointer-events:none}
-.video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);z-index:3;width:52px;height:52px;border:2px solid rgba(255,255,255,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;pointer-events:none}
-.video-play::after{content:'';width:0;height:0;border-style:solid;border-width:9px 0 9px 16px;border-color:transparent transparent transparent rgba(255,255,255,.9);margin-left:3px}
+
+
 .video-card:hover .video-play{border-color:var(--gold);background:rgba(219,166,94,.15)}
 .video-card:hover .video-play::after{border-left-color:var(--gold)}
 .video-info{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:1.25rem 1.5rem}
@@ -309,7 +269,7 @@ section{padding:7rem 5%}
 .video-mute svg{width:14px;height:14px;fill:rgba(255,255,255,.8)}
 
 /* ── GALERÍA COMUNIDAD ── */
-#galeria{padding:0;background:var(--bg3);overflow:hidden}
+
 .galeria-header{padding:5rem 5% 2.5rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem}
 .galeria-track-wrap{position:relative;overflow:hidden}
 .galeria-track-wrap::before,.galeria-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
@@ -325,60 +285,60 @@ section{padding:7rem 5%}
 
 /* ── CLASES ── */
 #clases{background:var(--bg3)}
-.clases-intro{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;margin-bottom:4rem}
-.clases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:rgba(255,255,255,.03)}
-.clase-card{position:relative;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer}
-.clase-card-bg{position:absolute;inset:0}
-.clase-card-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.45) saturate(.8);transition:filter .5s,transform .5s}
-.clase-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.4) 60%,transparent 100%)}
-.clase-card:hover .clase-card-bg img{filter:brightness(.6) saturate(1.1);transform:scale(1.06)}
-.clase-body{position:relative;z-index:2;padding:1.75rem}
-.clase-n{font-family:'Kanit',sans-serif;font-size:2.5rem;font-weight:900;color:rgba(219,166,94,.12);line-height:1;margin-bottom:.3rem;transition:color .35s}
-.clase-card:hover .clase-n{color:rgba(219,166,94,.3)}
-.clase-tag{font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
-.clase-name{font-family:'Kanit',sans-serif;font-size:1.05rem;font-weight:700;text-transform:uppercase;margin-bottom:.25rem}
-.clase-muscles{font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:.75rem}
-.clase-desc{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.55;margin-bottom:1rem;max-height:0;overflow:hidden;transition:max-height .4s}
-.clase-card:hover .clase-desc{max-height:100px}
-.clase-wa{display:inline-flex;align-items:center;gap:.4rem;font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(6px);transition:all .35s}
-.clase-card:hover .clase-wa{opacity:1;transform:translateY(0)}
-.clase-wa::after{content:'→'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ── SUCURSALES CLASES (NUEVO) ── */
-#agendar{background:var(--bg2)}
-.agendar-intro{max-width:700px;margin:0 auto 4rem;text-align:center}
+
+
 .agendar-intro .sec-label{justify-content:center}
 .agendar-intro .sec-label::before{display:none}
 .agendar-intro .sec-h{text-align:center}
-.sucursales-tabs{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:rgba(219,166,94,.08);min-width:0}
-.suc-panel{background:var(--bg3);padding:3rem}
-.suc-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.06)}
-.suc-num{font-family:'Kanit',sans-serif;font-size:4rem;font-weight:900;color:rgba(219,166,94,.1);line-height:1}
-.suc-info{}
-.suc-name{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;text-transform:uppercase;margin-bottom:.2rem}
-.suc-addr{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.5;max-width:280px}
-.suc-contact{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
-.suc-tel{font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:600;color:var(--gold)}
-.suc-horario-badge{font-size:.65rem;color:rgba(255,255,255,.35);text-align:right;line-height:1.4}
-.clases-suc-title{font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
-.clases-suc-list{display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
-.clase-suc-row{display:flex;align-items:center;gap:1rem;padding:.85rem 1rem;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.04);transition:border-color .25s}
-.clase-suc-row:hover{border-color:rgba(219,166,94,.2)}
-.clase-suc-dia{font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);width:60px;flex-shrink:0}
-.clase-suc-time{font-family:'Kanit',sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.55);width:130px;flex-shrink:0}
-.clase-suc-name{font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;flex:1}
-.clase-suc-btn{display:flex;align-items:center;gap:.35rem;background:var(--wa);color:#fff;padding:.4rem .9rem;font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;transition:all .25s;border-radius:2px}
-.clase-suc-btn:hover{background:#1da851}
-.clase-suc-btn svg{width:12px;height:12px;fill:white}
-.suc-cta{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1rem;background:rgba(219,166,94,.05);border:1px solid rgba(219,166,94,.12);flex-wrap:wrap;gap:.75rem}
-.suc-cta-text{font-size:.82rem;color:rgba(255,255,255,.5)}
-.suc-cta-text strong{color:var(--white);font-weight:500}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ── PLANES ── */
 #planes{background:var(--bg2);overflow-y:visible}
 .planes-header-grid{display:grid;grid-template-columns:1fr 1fr;align-items:end;margin-bottom:4rem;gap:2rem}
-.planes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:rgba(219,166,94,.06)}
+
 
 /* ── CARRUSEL PLANES ── */
 .planes-carousel{overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:36px 0}.planes-carousel::-webkit-scrollbar{display:none}
@@ -428,7 +388,7 @@ section{padding:7rem 5%}
 .pf-inp::placeholder{color:rgba(255,255,255,.18)}
 .pf-inp option{background:#1c1a17;color:#fff}
 .pf-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
-.pf-err{font-size:.68rem;color:#e05;display:none;margin-top:-.3rem}
+
 .pf-back{font-family:'Kanit',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22);background:none;border:none;cursor:pointer;padding:0;text-align:left;transition:color .2s;align-self:flex-start}
 .pf-back:hover{color:var(--gold)}
 .pf-wa{display:block;width:100%;text-align:center;padding:.82rem 1rem;font-family:'Kanit',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;background:#25D366;color:#fff;border:none;cursor:pointer;transition:background .25s;margin-top:auto;flex-shrink:0}
@@ -464,44 +424,44 @@ section{padding:7rem 5%}
 /*
 
 /* ── ORÁCULO WHATSAPP ── */
-#oraculo{background:var(--bg2);padding:8rem 5%}
-.oraculo-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1200px;margin:0 auto}
+
+
 .oraculo-left .sec-h{font-size:clamp(2rem,4.5vw,3.5rem);line-height:.95;margin-bottom:1.5rem}
-.oraculo-left p{color:rgba(255,255,255,.5);line-height:1.75;font-size:.95rem;font-weight:300;margin-bottom:2rem}
-.oraculo-puntos{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem}
-.oraculo-punto{display:flex;align-items:center;gap:.75rem;font-size:.85rem;color:rgba(255,255,255,.65)}
-.oraculo-punto::before{content:'◆';color:var(--gold);font-size:.6rem;flex-shrink:0}
+
+
+
+
 /* Ventana de chat */
-.wa-chat-window{border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05);background:#0f1923;max-width:380px;margin:0 auto}
-.wa-chat-header{background:#1f2c34;padding:1rem 1.25rem;display:flex;align-items:center;gap:.85rem;border-bottom:1px solid rgba(255,255,255,.05)}
-.wa-avatar{width:42px;height:42px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
-.wa-avatar img{width:100%;height:100%;object-fit:cover}
-.wa-chat-name{font-family:'Kanit',sans-serif;font-weight:700;font-size:.95rem;color:#fff;display:block;line-height:1.2}
-.wa-chat-status{font-size:.72rem;color:#25D366;display:block}
-.wa-chat-icons{margin-left:auto;display:flex;gap:1rem}
-.wa-chat-icons svg{width:20px;height:20px;fill:rgba(255,255,255,.4)}
-.wa-chat-body{background:#0b141a;padding:1.25rem;min-height:260px;display:flex;flex-direction:column;gap:.75rem}
-.wa-bubble-them{align-self:flex-start;background:#1f2c34;border-radius:0 10px 10px 10px;padding:.65rem 1rem;max-width:85%;position:relative}
-.wa-bubble-them::before{content:'';position:absolute;top:0;left:-8px;border-width:0 8px 8px 0;border-style:solid;border-color:transparent #1f2c34 transparent transparent}
-.wa-bubble-us{align-self:flex-end;background:#005c4b;border-radius:10px 0 10px 10px;padding:.65rem 1rem;max-width:85%;position:relative}
-.wa-bubble-us::after{content:'';position:absolute;top:0;right:-8px;border-width:0 0 8px 8px;border-style:solid;border-color:transparent transparent transparent #005c4b}
-.wa-bubble-text{font-size:.82rem;color:rgba(255,255,255,.9);line-height:1.45}
-.wa-bubble-time{font-size:.62rem;color:rgba(255,255,255,.35);text-align:right;margin-top:.25rem}
-.wa-chat-typing{align-self:flex-start;background:#1f2c34;border-radius:0 10px 10px 10px;padding:.6rem 1rem;display:flex;gap:4px;align-items:center}
-.wa-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);animation:waDot 1.4s ease-in-out infinite}
-.wa-dot:nth-child(2){animation-delay:.2s}
-.wa-dot:nth-child(3){animation-delay:.4s}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes waDot{0%,80%,100%{transform:scale(.8);opacity:.4}40%{transform:scale(1.1);opacity:1}}
-.wa-chat-input{background:#1f2c34;padding:.85rem 1rem;display:flex;align-items:center;gap:.75rem;border-top:1px solid rgba(255,255,255,.05)}
-.wa-input-field{flex:1;background:rgba(255,255,255,.06);border:none;border-radius:20px;padding:.5rem 1rem;font-size:.8rem;color:rgba(255,255,255,.7);font-family:'Outfit',sans-serif;outline:none}
-.wa-send-btn{width:40px;height:40px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;flex-shrink:0;transition:background .25s}
-.wa-send-btn:hover{background:#1da851}
-.wa-send-btn svg{width:18px;height:18px;fill:white}
-.wa-open-btn{display:flex;align-items:center;gap:.75rem;background:var(--wa);color:#fff;padding:1rem 2rem;font-family:'Kanit',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;transition:all .3s;margin-top:0}
-.wa-open-btn:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.25)}
-.wa-open-btn svg{width:22px;height:22px;fill:white;flex-shrink:0}
-.wa-note{font-size:.75rem;color:rgba(255,255,255,.3);margin-top:.75rem;display:flex;align-items:center;gap:.4rem}
-.wa-note::before{content:'●';color:var(--wa);font-size:.5rem}
+
+
+
+
+
+
+
+
+
+
 
 /* ── FOOTER ── */
 footer{background:#000;border-top:1px solid rgba(219,166,94,.08);padding:3.5rem 5%}
@@ -522,17 +482,11 @@ footer{background:#000;border-top:1px solid rgba(219,166,94,.08);padding:3.5rem 
 .fstat-n{font-family:'Kanit',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#fff;display:block;line-height:1.25}
 .fstat-s{font-family:'Kanit',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(219,166,94,.5);display:block;line-height:1.25}
 .fstat-sep{width:1px;height:26px;background:rgba(255,255,255,.07);flex-shrink:0}
-.footer-bar-logo img{height:26px;object-fit:contain;opacity:.75}
+
 @media(max-width:700px){
   .fstat-sep{display:none}
   .footer-stats-bar{justify-content:center;gap:.6rem 1.4rem}
 }
-
-/* ── WA FAB ── */
-.wa-fab{display:none!important}
-.wa-fab:hover{transform:scale(1.05)}
-.wa-fab svg{width:22px;height:22px;fill:white;flex-shrink:0}
-50%{box-shadow:0 4px 36px rgba(37,211,102,.6)}}
 
 /* ── TIPOGRAFÍA PLAYFAIR (Cambio 5) ── */
 h1.sec-h,h2.sec-h{font-family:'Playfair Display','Cinzel',serif}
@@ -544,64 +498,61 @@ h1.sec-h,h2.sec-h{font-family:'Playfair Display','Cinzel',serif}
 .r.d5{transition-delay:.35s}.r.d6{transition-delay:.42s}.r.d7{transition-delay:.49s}.r.d8{transition-delay:.56s}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1100px){
-  .clases-grid{grid-template-columns:repeat(2,1fr)}
-  .horarios-wrap{grid-template-columns:1fr;gap:3rem}
-  .horarios-side{position:static}
-}
+
 @media(max-width:900px){
-  .clases-intro{grid-template-columns:1fr}
-  .sucursales-tabs{grid-template-columns:1fr}
+  
+  
   .ubi-grid{grid-template-columns:1fr}
   .videos-grid{grid-template-columns:1fr}
-  .comunidad-mosaic{grid-template-columns:repeat(4,1fr);grid-template-rows:auto}
-  .mi-tall{grid-row:span 1}
+  
+  
   .planes-header-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   .nav-menu,.nav-wa{display:none}
   .nav-menu{display:flex}.nav-menu.open{transform:translateX(0)}
   .nav-wa.open{display:flex;position:fixed;bottom:0;left:0;right:0;justify-content:center;border-radius:0;padding:1rem}
-  .hamburger{display:flex}
+  
   section{padding:5rem 4%}
-  .hero-stats-bar{grid-template-columns:1fr}
-  .hstat{border-right:none;border-bottom:1px solid rgba(219,166,94,.08)}
-  .comunidad-mosaic{grid-template-columns:repeat(2,1fr)}
-  .clases-grid{grid-template-columns:1fr}
+  
+  
+  
+  
   .footer-row,.footer-bottom{flex-direction:column;align-items:center;text-align:center}
-  .clase-suc-row{flex-wrap:wrap;gap:.5rem}
-  .clase-suc-dia{width:auto}
-  .clase-suc-time{width:auto}
+  
+  
+  
+  .gf-grid{grid-template-columns:1fr!important;min-height:auto!important}
 }
 
 @media(max-width:900px){
-  .oraculo-wrap{grid-template-columns:1fr;gap:3rem}
+  
   .videos-grid{grid-template-columns:1fr}
   .galeria-item{width:180px;height:240px}
 }
 @media(max-width:768px){
   .nav-menu,.nav-cta{display:none}
-  .clases-grid{grid-template-columns:1fr 1fr}
-  h1.hero-h1{font-size:clamp(2.5rem,12vw,5rem)}
-  .hero-copy{font-size:.9rem}
+  
+  
+  
   .hero-actions{flex-direction:column;align-items:center}
   .btn-gold,.btn-ghost{width:100%;justify-content:center;max-width:320px}
   .nav-menu{display:flex}.nav-menu.open{transform:translateX(0)}
-  .hamburger{display:flex}
+  
   section{padding:5rem 4%}
-  .hero-stats{grid-template-columns:1fr;position:relative}
-  .hstat{border-right:none;border-bottom:1px solid rgba(219,166,94,.08)}
+  
+  
   .galeria-item{width:150px;height:200px}
   .footer-row,.footer-bottom{flex-direction:column;align-items:center;text-align:center}
 }
 
 /* ── NEW ANIMATIONS ── */
 @keyframes textShimmer{0%{background-position:-300% center}100%{background-position:300% center}}
-@keyframes svgBolt1{0%,42%,47%,100%{opacity:0}43%{opacity:.95}45%{opacity:.2}46%{opacity:.85}}
-@keyframes svgBolt2{0%,68%,74%,100%{opacity:0}69%{opacity:.9}71%{opacity:.15}73%{opacity:.75}}
+
+
 
 /* ── LIGHTNING SVG WRAP ── */
-.ltg-svg-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+
 
 /* ── SEC-H em SHIMMER ── */
 .sec-h em,.sec-h .shimmer{color:var(--gold);font-style:normal;background:linear-gradient(90deg,#B17D3B 0%,#DBA65E 30%,#EFC07A 50%,#DBA65E 70%,#B17D3B 100%);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:textShimmer 5s linear infinite}
@@ -620,7 +571,7 @@ h1.sec-h,h2.sec-h{font-family:'Playfair Display','Cinzel',serif}
 /* ── PLAN ENHANCEMENTS ── */
 
 @keyframes glow-pulse { 0%,100%{ opacity:.5 } 50%{ opacity:1 } }
-@keyframes bolt-flash{ 0%,90%,100%{opacity:.2} 95%{opacity:.05} }
+
 
 /* Card destacada: borde eléctrico SVG */
 .plan-flip-wrapper.mejor-valor{
@@ -703,60 +654,60 @@ h1.sec-h,h2.sec-h{font-family:'Playfair Display','Cinzel',serif}
 a[href^="tel"]{color:var(--gold)!important;text-decoration:none}
 
 /* ── CLASE-SUC-DIA COLOR ── */
-.clase-suc-dia{color:var(--gold)!important}
+
 
 /* ── SECCIÓN AGENDAR: fix mobile wrap ── */
-.clase-suc-row{flex-wrap:wrap}
-.clase-suc-time{font-size:.75rem}
+
+
 
 /* ── RESPONSIVE CAROUSEL ── */
 @media(max-width:900px){
   }
 @media(max-width:768px){
-  .clase-suc-dia{width:auto!important}
-  .clase-suc-time{width:auto!important}
+  
+  
   .video-card video{max-height:350px}
 }
 
 /* ── HERO CTA PULSE ── */
 @keyframes ctaPulse{0%,100%{box-shadow:0 0 20px rgba(219,166,94,.5),0 0 60px rgba(219,166,94,.2)}50%{box-shadow:0 0 35px rgba(219,166,94,.8),0 0 90px rgba(219,166,94,.35),0 0 140px rgba(219,166,94,.1)}}
-.btn-hero-cta{animation:ctaPulse 2.5s ease-in-out infinite!important;clip-path:none!important;border-radius:3px}
-.btn-hero-cta:hover{animation:none!important;box-shadow:0 0 40px rgba(219,166,94,.9),0 0 100px rgba(219,166,94,.4)!important;transform:translateY(-2px)}
+
+
 
 /* ── REMOVE old fake bolt CSS ── */
-.ltg-svg-wrap{display:none}
+
 
 /* ── RESPONSIVE COMPLETE ── */
 @media(max-width:1100px){
-  .clases-grid{grid-template-columns:repeat(2,1fr)}
-  .oraculo-wrap{grid-template-columns:1fr;gap:3rem}
+  
+  
   .ubi-grid{grid-template-columns:1fr}
-  .sucursales-tabs{grid-template-columns:1fr}
+  
   .planes-header-grid{grid-template-columns:1fr}
-  .horarios-wrap{grid-template-columns:1fr}
+  
 }
 @media(max-width:768px){
-  .clases-grid{grid-template-columns:1fr 1fr}
+  
   .planes-header-grid{grid-template-columns:1fr}
-  .hero-h1{font-size:clamp(2.5rem,12vw,5rem)!important}
+  
   .hero-actions{flex-direction:column;align-items:center;width:100%}
   .btn-gold,.btn-ghost{width:100%;max-width:320px;justify-content:center}
-  .hero-stats{grid-template-columns:1fr}
-  .hstat{border-right:none!important;border-bottom:1px solid rgba(219,166,94,.08)}
+  
+  
   .sec-h{font-size:clamp(1.6rem,7vw,2.8rem)!important}
-  .suc-header{flex-direction:column;gap:.75rem}
-  .suc-contact{align-items:flex-start!important}
-  .clase-suc-row{flex-direction:column;gap:.5rem;align-items:flex-start}
-  .clase-suc-btn{align-self:flex-start}
-  .wa-chat-window{max-width:100%}
-  .oraculo-wrap{gap:2rem}
+  
+  
+  
+  
+  
+  
   .footer-row{flex-direction:column;align-items:center;text-align:center}
   .footer-bottom{flex-direction:column;gap:.5rem;align-items:center;text-align:center}
   .plan.best{margin:0}
-  .clases-intro{grid-template-columns:1fr!important}
+  
 }
 @media(max-width:480px){
-  .clases-grid{grid-template-columns:1fr}
+  
   .galeria-item{width:140px;height:190px}
   nav{padding:0 4%}
 }
@@ -812,9 +763,9 @@ a[href^="tel"]{color:var(--gold)!important;text-decoration:none}
 /* Nav Drawer */
 .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:998;opacity:0;pointer-events:none;transition:opacity .35s;backdrop-filter:blur(2px)}
 .nav-overlay.open{opacity:1;pointer-events:all}
-.nav-menu-close{position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.5rem;cursor:pointer;line-height:1;transition:color .2s}
-.nav-menu-close:hover{color:var(--gold)}
-.hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:6px;z-index:1001;order:1}
+
+
+
 
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.open span:nth-child(2){opacity:0}
@@ -834,8 +785,8 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
 .nav-overlay.open{display:block}
 /* Right side: CTA + hamburger always together */
 .nav-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
-.nav-cta{display:inline-flex;align-items:center;gap:.5rem;background:#B17D3B;color:#fff;padding:.52rem 1.3rem;font-family:'Kanit',sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;transition:all .25s;border:none;cursor:pointer;box-shadow:0 0 18px rgba(177,125,59,.45)}
-.nav-cta:hover{background:#DBA65E;box-shadow:0 0 30px rgba(219,166,94,.6)}
+
+
 .hamburger-btn{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:6px;flex-shrink:0;background:none;border:none}
 .hamburger-btn span{width:22px;height:2px;background:#fff;display:block;transition:.3s}
 .hamburger-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -844,7 +795,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
 .nav-close{position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.4rem;cursor:pointer;line-height:1}
 @media(max-width:860px){
   /* Nav negro fijo, logo visible, CTA oculto en móvil */
-  .nav-cta{display:none !important}
+  
   nav{
     background:#000 !important;
     box-shadow:0 1px 0 rgba(177,125,59,.15) !important;
@@ -890,7 +841,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
     position:relative;
   }
   .hero-right video{
-    object-position:35% center; center;
+    object-position:35% center;
   }
   .hero-right::after{
     background:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.6) 75%,#000 100%);
@@ -925,15 +876,13 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   .ubi-grid,.sucursales-tabs,.planes-grid,.planes-header-grid{
     grid-template-columns:1fr;
   }
-  .clases-intro{grid-template-columns:1fr !important}
-  .clases-grid{grid-template-columns:1fr 1fr}
+  
+  
   section{padding:3.5rem 4%}
   .sec-h{font-size:clamp(1.6rem,7vw,2.4rem) !important}
 }
 
-@media(max-width:480px){
-  .clases-grid{grid-template-columns:1fr}
-}
+
 
 /* ── BUTTONS v11 ── */
 .btn-gold{display:inline-flex;align-items:center;gap:.55rem;background:#B17D3B;color:#fff;padding:.82rem 1.9rem;font-family:'Kanit',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;box-shadow:0 0 18px rgba(177,125,59,.5),0 0 50px rgba(177,125,59,.2);white-space:nowrap}
@@ -1074,7 +1023,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
     <div>
       <div class="sec-label r">Nuestras clases</div>
       <h2 class="sec-h r" style="margin:.5rem 0 1rem"><em>Disciplinas</em></h2>
-      <p class="sec-sub r" style="max-width:500px">Spinning, Ritmos Latinos y Funcional (Sólo en Zeus). Sala de pesas y más.</p>
+      <p class="sec-sub r" style="max-width:500px">Spinning, Ritmos Latinos y Funcional (Solo en Zeus). Sala de pesas y más.</p>
     </div>
     <div class="clases-btns r">
       <a href="sucursal-serdan.html#horarios" class="btn-gold" style="width:fit-content"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.09 12.97H11L10 22l8.91-10.97H13z"/></svg> Reservar en Serdán</a>
@@ -1286,7 +1235,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
             <input class="pf-inp" data-f="tel" type="tel" placeholder="55 1234 5678" onclick="event.stopPropagation()">
           </div>
           <div>
-            <label class="pf-label">Nombre 2a persona</label>
+            <label class="pf-label">Nombre 2ª persona</label>
             <input class="pf-inp" data-f="persona2" type="text" placeholder="Nombre completo" onclick="event.stopPropagation()">
           </div>
           <div>
@@ -1446,18 +1395,11 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
             <label class="pf-label">Correo electrónico</label>
             <input class="pf-inp" data-f="email" type="email" placeholder="tu@correo.com" onclick="event.stopPropagation()">
           </div>
-          <div class="pf-row">
-            <div>
-              <label class="pf-label">Fecha preferida</label>
-              <input class="pf-inp" data-f="fecha" type="date" onclick="event.stopPropagation()">
-            </div>
-            <div>
-              <label class="pf-label">Sucursal</label>
-              <select class="pf-inp" data-f="sucursal" onclick="event.stopPropagation()">
-                <option value="Zeus">Zeus</option>
-              </select>
-            </div>
+          <div>
+            <label class="pf-label">Fecha preferida</label>
+            <input class="pf-inp" data-f="fecha" type="date" onclick="event.stopPropagation()">
           </div>
+          <input type="hidden" data-f="sucursal" value="Zeus">
           <button class="pf-wa" onclick="event.stopPropagation();sendPlanWA('Clases Dinámicas — $40/clase','form4')"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.999 2C6.477 2 2 6.484 2 12.017c0 1.99.521 3.859 1.43 5.479L2 22l4.618-1.413A9.956 9.956 0 0012 22c5.523 0 10-4.484 10-10.017C22 6.484 17.523 2 12 2z"/></svg> Reservar por WhatsApp</button>
           <p class="pf-note">Te confirmaremos horario disponible</p>
         </div>
@@ -1735,7 +1677,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
 
 <!-- GREEK FOOD -->
 <section id="food" style="background:var(--bg);padding:0;overflow:hidden">
-  <div style="display:grid;grid-template-columns:1fr 1fr;min-height:420px">
+  <div class="gf-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:420px">
     <!-- Left: food image -->
     <div style="position:relative;overflow:hidden">
       <img src="imgs/fotos-greek-food/logo-greek-food.jpeg"
@@ -1874,23 +1816,23 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
     </div-->
 <div class="galeria-track-wrap">
     <div class="galeria-track" id="galleryTrack">
-      <div class="galeria-item"><img src="imgs/prototipo/greeks1.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks2.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks3.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks4.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks5.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks6.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks7.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks8.jpg" alt="Greeks" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks1.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 1" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks2.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 2" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks3.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 3" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks4.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 4" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks5.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 5" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks6.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 6" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks7.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 7" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks8.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 8" loading="lazy"></div>
       <!-- Duplicado para loop infinito -->
-      <div class="galeria-item"><img src="imgs/prototipo/greeks1.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks2.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks3.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks4.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks5.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks6.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks7.jpg" alt="Greeks" loading="lazy"></div>
-      <div class="galeria-item"><img src="imgs/prototipo/greeks8.jpg" alt="Greeks" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks1.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 1" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks2.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 2" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks3.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 3" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks4.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 4" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks5.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 5" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks6.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 6" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks7.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 7" loading="lazy"></div>
+      <div class="galeria-item"><img src="imgs/prototipo/greeks8.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 8" loading="lazy"></div>
     </div>
   </div>
   <div class="galeria-footer">
@@ -1904,32 +1846,6 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
 
 
 <!-- CONTACTO -->
-<section id="contacto" style="background:var(--bg2);padding:5.5rem 5%">
-  <div style="display:grid;grid-template-columns:1fr;gap:5rem;align-items:start">
-    <!-- Ubicaciones -->
-    <!--div>
-      <div class="sec-label r">Encuentranos</div>
-      <h2 class="sec-h r" style="margin:.5rem 0 2rem">Nuestros <em>Templos</em></h2>
-      <div style="background:var(--bg3);border:1px solid rgba(177,125,59,.1);padding:1.75rem;margin-bottom:.9rem;transition:border-color .3s" class="r">
-        <div style="font-family:'Cinzel',serif;font-size:1.2rem;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:.9rem">Greek Gym Serdan</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.52);margin-bottom:.5rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> <span>C. 55 Nte. 2806, Aquiles Serdan, Puebla</span></div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.52);margin-bottom:.5rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span>Lun–Vie: 05:30–22:00 · Sab–Dom: 07:00–19:00</span></div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.52);margin-bottom:1.1rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg> <a href="tel:+522202757573" style="color:var(--gold)">220 275 7573</a></div>
-        <a href="sucursal-serdan.html" class="btn-gold" style="font-size:.72rem;padding:.6rem 1.25rem">Ver Sucursal →</a>
-      </div>
-      <div style="background:var(--bg3);border:1px solid rgba(177,125,59,.1);padding:1.75rem;transition:border-color .3s" class="r d2">
-        <div style="font-family:'Cinzel',serif;font-size:1.2rem;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:.9rem">Greek Gym Zeus</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.52);margin-bottom:.5rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> <span>C. 4 Sur 714, Libertad, Puebla</span></div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.52);margin-bottom:.5rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span>Lun–Vie: 06:00–22:00 · Sab–Dom: 07:00–19:00</span></div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.52);margin-bottom:.5rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg> <a href="tel:+522205333473" style="color:var(--gold)">220 533 3473</a></div>
-        <div style="display:flex;gap:.6rem;font-size:.78rem;color:var(--gold);font-family:'Kanit',sans-serif;font-weight:600;margin-bottom:1.1rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg> Greek Food disponible</div>
-        <a href="sucursal-zeus.html" class="btn-gold" style="font-size:.72rem;padding:.6rem 1.25rem">Ver Sucursal →</a>
-      </div>
-    </div-->
-  </div>
-</section>
-
-
 <!-- VISITA GREEK CTA -->
 <section style="background:linear-gradient(rgba(14,14,14,.82),rgba(14,14,14,.82)),url('imgs/visita.webp') center center/cover no-repeat;padding:5.5rem 5%;text-align:center;position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(177,125,59,.12) 0%,transparent 70%);pointer-events:none"></div>
@@ -1956,9 +1872,9 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
       <span class="footer-logo-text"></span>
     </div>
     <ul class="footer-nav">
-      <li><a href="#galeria">Comunidad</a></li>
+      <li><a href="#comunidad">Comunidad</a></li>
       <li><a href="#clases">Clases</a></li>
-      <li><a href="#agendar">Agendar</a></li>
+      <li><a href="#planes">Agendar</a></li>
       <li><a href="#planes">Planes</a></li>
       <li><a href="#ubicaciones">Sucursales</a></li>
     </ul>
@@ -2221,7 +2137,9 @@ heroObserver.observe(hero);
 
   function startAuto(){
     stopAuto();
-    autoTimer = setInterval(advanceSlide, 1200);
+    var isMobile = window.innerWidth <= 768;
+    var autoScrollInterval = isMobile ? 2400 : 1200;
+    autoTimer = setInterval(advanceSlide, autoScrollInterval);
   }
 
   function stopAuto(){
@@ -2274,9 +2192,10 @@ function sendPlanWA(planName, formId){
   const persona2    = g('persona2')    ? g('persona2').value.trim()     : '';
 
   // Validación
-  const inN = g('nombre'), inT = g('tel');
+  const inN = g('nombre'), inA = g('apellido'), inT = g('tel');
   let ok = true;
   if(!nombre){ inN.style.borderColor='#c0392b'; inN.focus(); ok=false; } else inN.style.borderColor='';
+  if(!apellido){ inA.style.borderColor='#c0392b'; if(ok){ inA.focus(); } ok=false; } else inA.style.borderColor='';
   if(!tel)   { inT.style.borderColor='#c0392b'; if(ok){ inT.focus(); } ok=false; } else inT.style.borderColor='';
   if(!ok) return;
 
