@@ -7,7 +7,7 @@
 <link rel="icon" href="imgs/favicon.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="imgs/apple-touch-icon.png">
 <title>GREEK GYM | Forja Tu Leyenda</title>
-<meta name="description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Sala de Pesas. Únete hoy.">
+<meta name="description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#080808">
 <link rel="canonical" href="https://greekgym.mx/">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Greek Gym">
 <meta property="og:locale" content="es_MX">
 <meta property="og:title" content="Greek Gym | Forja Tu Leyenda — Gimnasio en Puebla">
-<meta property="og:description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Sala de Pesas. Únete hoy.">
+<meta property="og:description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
 <meta property="og:url" content="https://greekgym.mx/">
 <meta property="og:image" content="https://greekgym.mx/imgs/fotos-sucursal-zeus/_MG_0163.jpg">
 <meta property="og:image:width" content="2048">
@@ -23,7 +23,7 @@
 <meta property="og:image:alt" content="Instalaciones de Greek Gym en Puebla">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Greek Gym | Forja Tu Leyenda — Gimnasio en Puebla">
-<meta name="twitter:description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Sala de Pesas. Únete hoy.">
+<meta name="twitter:description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
 <meta name="twitter:image" content="https://greekgym.mx/imgs/fotos-sucursal-zeus/_MG_0163.jpg">
 <script type="application/ld+json">
 {
@@ -55,7 +55,7 @@
         "addressCountry": "MX"
       },
       "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:30", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:30", "closes": "22:30"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "19:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "07:00", "closes": "19:00"}
       ],
@@ -82,7 +82,7 @@
         "addressCountry": "MX"
       },
       "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "06:00", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:30", "closes": "22:30"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "19:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "07:00", "closes": "19:00"}
       ],
@@ -252,6 +252,21 @@ section{padding:7rem 5%}
 .videos-gold-line::after{background:linear-gradient(to left,transparent,var(--gold))}
 .videos-gold-line span{font-family:'Kanit',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
 .videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.videos-carousel{overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 0}
+.videos-carousel::-webkit-scrollbar{display:none}
+.videos-track{display:flex;gap:4px;width:max-content;padding:0 5%}
+.videos-carousel .video-card{flex:0 0 calc(33.333vw - 15px);min-width:220px;max-width:400px;scroll-snap-align:start}
+@media(max-width:1020px){.videos-carousel .video-card{flex:0 0 calc(50vw - 12px)}}
+@media(max-width:900px){
+  .videos-track{padding:0}
+  .videos-carousel .video-card{flex:0 0 88vw;max-width:360px;min-width:0;margin:0 4px;scroll-snap-align:center}
+  .videos-carousel .video-card:first-child{margin-left:5vw}
+  .videos-carousel .video-card:last-child{margin-right:5vw}
+  .videos-carousel .video-card video{max-height:72vh}
+}
+.video-dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.25rem}
+.video-dot{width:8px;height:8px;border-radius:50%;background:rgba(219,166,94,.2);border:none;cursor:pointer;padding:0;flex-shrink:0;transition:all .35s cubic-bezier(.4,0,.2,1)}
+.video-dot.active{background:var(--gold);width:26px;border-radius:4px}
 .video-card{position:relative;border-radius:8px;overflow:hidden;background:#000;border:1px solid rgba(219,166,94,.12);transition:border-color .35s,transform .35s;cursor:pointer}
 .video-card:hover{border-color:rgba(219,166,94,.45);transform:translateY(-4px)}
 .video-card video{width:100%;aspect-ratio:9/16;object-fit:cover;opacity:.85;transition:opacity .4s;display:block}
@@ -740,22 +755,6 @@ a[href^="tel"]{color:var(--gold)!important;text-decoration:none}
     max-height:72vh;
     object-fit:cover;
   }
-  /* Indicador de scroll */
-  .videos-scroll-hint{
-    display:flex!important;
-    justify-content:center;
-    gap:6px;
-    padding:.75rem 0 0;
-  }
-  .vsh-dot{
-    width:6px;height:6px;border-radius:50%;
-    background:rgba(219,166,94,.3);
-    transition:background .3s;
-  }
-  .vsh-dot.active{background:var(--gold)}
-}
-@media(min-width:901px){
-  .videos-scroll-hint{display:none!important}
 }
 
 
@@ -952,6 +951,19 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   </div>
 </div>
 
+<!-- MODAL ELEGIR SUCURSAL WHATSAPP -->
+<div class="booking-overlay" id="waModal">
+  <div class="booking-box" style="max-width:340px">
+    <button class="booking-close" onclick="closeWaModal()">×</button>
+    <h3 class="booking-title" style="margin-bottom:.3rem">Elige tu Sucursal</h3>
+    <p class="booking-sub">¿A qué sucursal quieres escribir por WhatsApp?</p>
+    <div style="display:flex;flex-direction:column;gap:.75rem">
+      <a id="waSerdanLink" href="#" target="_blank" rel="noopener" class="btn-gold" style="width:100%;justify-content:center;text-align:center">Escribir a Serdán</a>
+      <a id="waZeusLink" href="#" target="_blank" rel="noopener" class="btn-gold" style="width:100%;justify-content:center;text-align:center">Escribir a Zeus</a>
+    </div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
@@ -1007,11 +1019,11 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   <div class="ubi-grid">
     <div class="ubi-card r">
       <div class="ubi-map"><a href="sucursal-serdan.html"><img src="imgs/ggserdan.jpg" alt="Instalaciones Greek Gym Serdán" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 43%;filter:brightness(.8) saturate(.85);transition:transform .5s"></a></div>
-      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">01</div><div><div class="ubi-name"><a href="sucursal-serdan.html" style="color:inherit;text-decoration:none">Greek Gym - Serdán</a></div></div></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>C. 55 Nte. 2806, Ampliación Francisco I. Madero, Aquiles Serdán, 72140 Puebla</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>Lun–Vie: 05:30–22:00 · Sáb y Dom: 07:00–19:00</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></span><span>220 275 7573</span></div><div class="ubi-chips"><span class="ubi-chip">Estacionamiento</span><span class="ubi-chip">Regaderas</span><span class="ubi-chip">Ring de Box</span></div><a href="sucursal-serdan.html" class="ubi-link">Ver Sucursal →</a></div>
+      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">01</div><div><div class="ubi-name"><a href="sucursal-serdan.html" style="color:inherit;text-decoration:none">Greek Gym - Serdán</a></div></div></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>C. 55 Nte. 2806, Ampliación Francisco I. Madero, Aquiles Serdán, 72140 Puebla</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>Lun–Vie: 05:30–22:30 · Sáb y Dom: 07:00–19:00</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></span><span>220 275 7573</span></div><div class="ubi-chips"><span class="ubi-chip">Estacionamiento</span><span class="ubi-chip">Regaderas</span><span class="ubi-chip">Ring de Box</span></div><a href="sucursal-serdan.html" class="ubi-link">Ver Sucursal →</a></div>
     </div>
     <div class="ubi-card r">
       <div class="ubi-map"><a href="sucursal-zeus.html"><img src="imgs/ggzeus.jpg" alt="Instalaciones Greek Gym Zeus" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top center;filter:brightness(.8) saturate(.85);transition:transform .5s"></a></div>
-      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">02</div><div><div class="ubi-name"><a href="sucursal-zeus.html" style="color:inherit;text-decoration:none">Greek Gym - Zeus</a></div></div></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>C. 4 Sur 714, Libertad, 72130 Heroica Puebla de Zaragoza</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>Lun–Vie: 06:00–22:00 · Sáb y Dom: 07:00–19:00</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></span><span>220 533 3473</span></div><div class="ubi-chips"><span class="ubi-chip">Estacionamiento</span><span class="ubi-chip">Regaderas</span><span class="ubi-chip">Cafetería</span><span class="ubi-chip">Tienda</span></div><a href="sucursal-zeus.html" class="ubi-link">Ver Sucursal →</a></div>
+      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">02</div><div><div class="ubi-name"><a href="sucursal-zeus.html" style="color:inherit;text-decoration:none">Greek Gym - Zeus</a></div></div></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>C. 4 Sur 714, Libertad, 72130 Heroica Puebla de Zaragoza</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>Lun–Vie: 05:30–22:30 · Sáb y Dom: 07:00–19:00</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></span><span>220 533 3473</span></div><div class="ubi-chips"><span class="ubi-chip">Estacionamiento</span><span class="ubi-chip">Regaderas</span><span class="ubi-chip">Cafetería</span><span class="ubi-chip">Tienda</span></div><a href="sucursal-zeus.html" class="ubi-link">Ver Sucursal →</a></div>
     </div>
   </div>
 </section>
@@ -1023,7 +1035,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
     <div>
       <div class="sec-label r">Nuestras clases</div>
       <h2 class="sec-h r" style="margin:.5rem 0 1rem"><em>Disciplinas</em></h2>
-      <p class="sec-sub r" style="max-width:500px">Spinning, Ritmos Latinos y Funcional (Solo en Zeus). Sala de pesas y más.</p>
+      <p class="sec-sub r" style="max-width:500px">Spinning en ambas sucursales. Ritmos Latinos y Funcional (Solo en Zeus). Zona de pesas y mucho más.</p>
     </div>
     <div class="clases-btns r">
       <a href="sucursal-serdan.html#horarios" class="btn-gold" style="width:fit-content"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.09 12.97H11L10 22l8.91-10.97H13z"/></svg> Reservar en Serdán</a>
@@ -1046,7 +1058,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   <div class="templos-grid r d1">
 
     <!-- Spinning -->
-    <div class="templo-card" onclick="window.location.href='sucursal-zeus.html#horarios'">
+    <div class="templo-card" onclick="window.location.href='sucursal-serdan.html#horarios'">
       <div class="templo-icon-box" style="background:#DBA65E">
         <svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
       </div>
@@ -1689,7 +1701,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
     </div>
     <!-- Right: content -->
     <div style="background:var(--bg);padding:4.5rem 6%;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(177,125,59,.15)">
-      <div class="sec-label r" style="margin-bottom:.6rem">Solo en Greek Gym Zeus</div>
+      <div class="sec-label r" style="margin-bottom:.6rem">Come Saludable</div>
       <h2 class="sec-h r" style="margin:.4rem 0 1rem;font-size:clamp(2.5rem,5vw,4rem)">Greek <em>Food</em></h2>
       <p class="sec-sub r" style="margin-top:0">Tu entrenamiento no termina cuando sueltas la pesa. Licuados proteicos, ensaladas frescas, paninos y baguettes para recargar energía antes o después de entrenar.</p>
       <!-- Chips -->
@@ -1701,10 +1713,6 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
         <span style="font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(177,125,59,.3);color:var(--gold);padding:.28rem .72rem">Snacks</span>
       </div>
 
-      <!-- Horarios -->
-      <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.75rem">
-        <div style="font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:600;text-transform:uppercase;color:rgba(255,255,255,.45)">Lun–Vie <span style="color:var(--gold)">6AM–10PM</span> &nbsp;·&nbsp; Sáb–Dom <span style="color:var(--gold)">7AM–7PM</span></div>
-      </div>
       <!-- Actions -->
       <div style="display:flex; flex-direction:column; gap:.75rem; width:100%; max-width:320px;">
   
@@ -1730,7 +1738,12 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   </div>
   <div class="videos-gold-line r"><span>Resultados reales · Comunidad real</span></div>
 
-  <div class="videos-grid">
+  <div style="display:flex;align-items:center;justify-content:center;gap:.6rem;margin:0 0 .75rem">
+    <button class="plan-carousel-arrow" aria-label="Videos anteriores" onclick="videoNav(-1)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="plan-carousel-arrow" aria-label="Videos siguientes" onclick="videoNav(1)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+  </div>
+
+  <div id="videosCarousel" class="videos-carousel">
     <div class="video-card r d1" data-categoria="spinning">
       <video id="v1" src="videos/prototipo/video1.mp4"
         autoplay muted loop playsinline preload="metadata"
@@ -1761,8 +1774,45 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
       </button>
       <div class="video-info"><div class="video-title">Fuerza Real</div></div>
     </div>
+    <div class="video-card r d1" data-categoria="constancia">
+      <video id="v4" src="videos/prototipo/11.mp4"
+        autoplay muted loop playsinline preload="metadata"
+        poster="imgs/prototipo/video11-poster.jpg"
+        style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;opacity:.88"></video>
+      <button class="video-mute" onclick="toggleMute('v4',this)" aria-label="Silencio">
+        <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      </button>
+      <div class="video-info"><div class="video-title">Constancia Diaria</div></div>
+    </div>
+    <div class="video-card r d2" data-categoria="comunidad">
+      <video id="v5" src="videos/prototipo/22.mp4"
+        autoplay muted loop playsinline preload="metadata"
+        poster="imgs/prototipo/video22-poster.jpg"
+        style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;opacity:.88"></video>
+      <button class="video-mute" onclick="toggleMute('v5',this)" aria-label="Silencio">
+        <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      </button>
+      <div class="video-info"><div class="video-title">Comunidad en Movimiento</div></div>
+    </div>
+    <div class="video-card r d3" data-categoria="espiritu">
+      <video id="v6" src="videos/prototipo/33.mp4"
+        autoplay muted loop playsinline preload="metadata"
+        poster="imgs/prototipo/video33-poster.jpg"
+        style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;opacity:.88"></video>
+      <button class="video-mute" onclick="toggleMute('v6',this)" aria-label="Silencio">
+        <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      </button>
+      <div class="video-info"><div class="video-title">Espíritu Griego</div></div>
+    </div>
   </div>
-  <div class="videos-scroll-hint" style="display:none"><div class="vsh-dot active"></div><div class="vsh-dot"></div><div class="vsh-dot"></div></div>
+  <div class="video-dots" id="videoDots">
+    <button class="video-dot active" onclick="goVideoSlide(0)" aria-label="Video 1"></button>
+    <button class="video-dot" onclick="goVideoSlide(1)" aria-label="Video 2"></button>
+    <button class="video-dot" onclick="goVideoSlide(2)" aria-label="Video 3"></button>
+    <button class="video-dot" onclick="goVideoSlide(3)" aria-label="Video 4"></button>
+    <button class="video-dot" onclick="goVideoSlide(4)" aria-label="Video 5"></button>
+    <button class="video-dot" onclick="goVideoSlide(5)" aria-label="Video 6"></button>
+  </div>
   </div>
 
   <!-- Testimonios subsection -->
@@ -1852,13 +1902,13 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   <div style="position:relative;z-index:1;max-width:700px;margin:0 auto">
     <div class="sec-label r" style="justify-content:center;margin-bottom:1rem">Entra al Olimpo</div>
     <h2 class="sec-h r" style="text-align:center;margin-bottom:1.25rem">VISITA GREEK</h2>
-    <p class="sec-sub r" style="text-align:center;max-width:520px;margin:0 auto 2.5rem">Sin compromiso. Ven un día completo y descubre por qué somos el Olimpo del entrenamiento en Puebla.</p>
+    <p class="sec-sub r" style="text-align:center;max-width:520px;margin:0 auto 2.5rem">Ven un día completo y descubre por qué somos el Olimpo del entrenamiento en Puebla.</p>
     <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:2rem">
       <a href="sucursal-serdan.html" class="btn-gold" style="font-size:.85rem;padding:.9rem 2rem">VER SUCURSAL SERDÁN</a>
       <a href="sucursal-zeus.html" class="btn-outline-gold" style="font-size:.85rem;padding:.9rem 2rem">VER SUCURSAL ZEUS</a>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:2rem">
-      <a href="https://wa.me/525612934010?text=Hola%2C+quiero+reservar+una+Visita+Greek+%E2%80%94+%24100" class="btn-gold" style="font-size:.95rem;padding:1rem 2.4rem;letter-spacing:.08em"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:middle;margin-right:.35em"><path d="M13 2L4.09 12.97H11L10 22l8.91-10.97H13z"/></svg>RESERVAR VISITA — $100</a>
+      <a href="#" onclick="return openWaModal(event,'Hola, quiero reservar una Visita Greek — $100')" class="btn-gold" style="font-size:.95rem;padding:1rem 2.4rem;letter-spacing:.08em"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:middle;margin-right:.35em"><path d="M13 2L4.09 12.97H11L10 22l8.91-10.97H13z"/></svg>RESERVAR VISITA — $100</a>
     </div>
     <p style="font-size:.78rem;color:rgba(255,255,255,.35);margin:0;display:flex;align-items:center;gap:.4rem;justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg>Serdán: 220 275 7573 &nbsp;·&nbsp; Zeus: 220 533 3473</p>
   </div>
@@ -1878,13 +1928,13 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
       <li><a href="#planes">Planes</a></li>
       <li><a href="#ubicaciones">Sucursales</a></li>
     </ul>
-    <a href="https://wa.me/525612934010" class="btn-gold" style="font-size:.75rem;padding:.6rem 1.4rem">WhatsApp</a>
+    <a href="#" onclick="return openWaModal(event,'Hola, quiero más información de Greek Gym')" class="btn-gold" style="font-size:.75rem;padding:.6rem 1.4rem">WhatsApp</a>
   </div>
   <div class="footer-line"></div>
   <div class="footer-bottom">
     <span style="display:inline-flex;align-items:center;gap:.35rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Puebla, México · 2 Sucursales</span>
     <span>© 2026 Greek Gym · Todos los derechos reservados</span>
-    <a href="https://www.instagram.com/greek_gym_/" style="color:rgba(219,166,94,.45);font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase">@greek_gym_ →</a>
+    <a href="https://www.instagram.com/greek_gym_/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--gold);font-family:'Kanit',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.55rem 1.1rem;border:1px solid rgba(219,166,94,.4);border-radius:999px;transition:all .25s" onmouseenter="this.style.background='var(--gold)';this.style.color='#000'" onmouseleave="this.style.background='none';this.style.color='var(--gold)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>Síguenos en Instagram</a>
   </div>
 
   <!-- Stats bar -->
@@ -2044,7 +2094,31 @@ var bModal = document.getElementById('bookingModal');
 if(bModal){
   bModal.addEventListener('click', function(e){ if(e.target===this) closeBookingModal(); });
 }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeBookingModal(); });
+
+// ── MODAL ELEGIR SUCURSAL WHATSAPP ──
+function openWaModal(e, msg) {
+  if(e && e.preventDefault) e.preventDefault();
+  const text = encodeURIComponent(msg || 'Hola, quiero más información de Greek Gym');
+  const s = document.getElementById('waSerdanLink');
+  const z = document.getElementById('waZeusLink');
+  if(s) s.href = 'https://wa.me/522202757573?text=' + text;
+  if(z) z.href = 'https://wa.me/522205333473?text=' + text;
+  const modal = document.getElementById('waModal');
+  if(modal) modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  return false;
+}
+function closeWaModal() {
+  const modal = document.getElementById('waModal');
+  if(modal) modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+var waModal = document.getElementById('waModal');
+if(waModal){
+  waModal.addEventListener('click', function(e){ if(e.target===this) closeWaModal(); });
+}
+
+document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeBookingModal(); closeWaModal(); } });
 
 
 // Force hero video play
@@ -2172,6 +2246,100 @@ heroObserver.observe(hero);
   startAuto();
 })();
 
+/* ── CAROUSEL COMUNIDAD GREEK — AUTO-AVANCE (mismo patrón que planes) ── */
+(function(){
+  var outer = document.getElementById('videosCarousel');
+  if(!outer) return;
+  var origCards = Array.from(outer.querySelectorAll('.video-card'));
+  var track = document.createElement('div');
+  track.className = 'videos-track';
+  origCards.forEach(function(c){ track.appendChild(c); });
+  outer.appendChild(track);
+
+  function cardW(){
+    var w = track.querySelector('.video-card');
+    return w ? w.getBoundingClientRect().width + 4 : 300;
+  }
+
+  outer.addEventListener('scroll', function(){
+    var idx = Math.round(outer.scrollLeft / cardW());
+    document.querySelectorAll('.video-dot').forEach(function(d,i){
+      d.classList.toggle('active', i === idx);
+    });
+  }, {passive:true});
+
+  // Solo reproduce los videos visibles/cercanos — evita 6 autoplays simultáneos
+  var trackVideos = Array.from(track.querySelectorAll('video'));
+  var playObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var vid = entry.target;
+      if(entry.isIntersecting){
+        vid.play().catch(function(){});
+      } else {
+        vid.pause();
+      }
+    });
+  }, {root: outer, threshold: 0.25});
+  trackVideos.forEach(function(vid){
+    vid.removeAttribute('autoplay');
+    vid.pause();
+    playObserver.observe(vid);
+  });
+
+  window.goVideoSlide = function(n){
+    currentIndex = Math.max(0, Math.min(totalCards - 1, n));
+    outer.scrollTo({left: currentIndex * cardW(), behavior:'smooth'});
+    pauseAndResumeLater();
+  };
+
+  var totalCards = origCards.length;
+  var currentIndex = 0;
+  var autoTimer = null;
+  var isPaused = false;
+
+  function advanceSlide(){
+    if(isPaused) return;
+    currentIndex = (currentIndex + 1) % totalCards;
+    outer.scrollTo({left: currentIndex * cardW(), behavior:'smooth'});
+  }
+
+  function startAuto(){
+    stopAuto();
+    var isMobile = window.innerWidth <= 768;
+    var autoScrollInterval = isMobile ? 4500 : 3500;
+    autoTimer = setInterval(advanceSlide, autoScrollInterval);
+  }
+
+  function stopAuto(){
+    if(autoTimer) clearInterval(autoTimer);
+  }
+
+  function pauseAndResumeLater(){
+    isPaused = true;
+    stopAuto();
+    clearTimeout(window._videoResumeTimeout);
+    window._videoResumeTimeout = setTimeout(function(){
+      isPaused = false;
+      startAuto();
+    }, 5000);
+  }
+
+  // Pausa con hover (desktop) y touch (mobile)
+  outer.addEventListener('mouseenter', function(){ isPaused = true; stopAuto(); });
+  outer.addEventListener('mouseleave', function(){ isPaused = false; startAuto(); });
+  outer.addEventListener('touchstart', function(){ isPaused = true; stopAuto(); }, {passive:true});
+  outer.addEventListener('touchend', pauseAndResumeLater);
+
+  // Flechas: actualiza índice + pausa 5 seg
+  window.videoNav = function(dir){
+    currentIndex = Math.max(0, Math.min(totalCards - 1, currentIndex + dir));
+    outer.scrollTo({left: currentIndex * cardW(), behavior:'smooth'});
+    pauseAndResumeLater();
+  };
+
+  startAuto();
+})();
+
 function flipPlan(id){
   document.getElementById(id).classList.toggle('flipped');
 }
@@ -2210,7 +2378,8 @@ function sendPlanWA(planName, formId){
   if(tipo_clase)  msg += `\n🏋️ Clase: ${tipo_clase}`;
   msg += `\n\n¡Gracias, quedo en espera de su confirmación! 🙌`;
 
-  window.open('https://wa.me/525612934010?text='+encodeURIComponent(msg),'_blank');
+  const waNumber = sucursal.indexOf('Zeus') !== -1 ? '522205333473' : '522202757573';
+  window.open('https://wa.me/'+waNumber+'?text='+encodeURIComponent(msg),'_blank');
 }
 
 </script>
