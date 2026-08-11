@@ -7,7 +7,7 @@
 <link rel="icon" href="imgs/favicon.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="imgs/apple-touch-icon.png">
 <title>GREEK GYM | Forja Tu Leyenda</title>
-<meta name="description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
+<meta name="description" content="El gimnasio más épico de Puebla. 3 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#080808">
 <link rel="canonical" href="https://greekgym.mx/">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Greek Gym">
 <meta property="og:locale" content="es_MX">
 <meta property="og:title" content="Greek Gym | Forja Tu Leyenda — Gimnasio en Puebla">
-<meta property="og:description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
+<meta property="og:description" content="El gimnasio más épico de Puebla. 3 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
 <meta property="og:url" content="https://greekgym.mx/">
 <meta property="og:image" content="https://greekgym.mx/imgs/fotos-sucursal-zeus/_MG_0163.jpg">
 <meta property="og:image:width" content="2048">
@@ -23,7 +23,7 @@
 <meta property="og:image:alt" content="Instalaciones de Greek Gym en Puebla">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Greek Gym | Forja Tu Leyenda — Gimnasio en Puebla">
-<meta name="twitter:description" content="El gimnasio más épico de Puebla. 2 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
+<meta name="twitter:description" content="El gimnasio más épico de Puebla. 3 sucursales. Spinning, Ritmos Latinos, Zona de Pesas. Únete hoy.">
 <meta name="twitter:image" content="https://greekgym.mx/imgs/fotos-sucursal-zeus/_MG_0163.jpg">
 <script type="application/ld+json">
 {
@@ -421,7 +421,10 @@ section{padding:7rem 5%}
 
 /* ── UBICACIONES ── */
 #ubicaciones{background:var(--bg)}
-.ubi-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:rgba(255,255,255,.04);margin-top:3.5rem}
+.ubi-grid{display:flex;flex-direction:column;gap:3px;background:rgba(255,255,255,.04);margin-top:3.5rem}
+.ubi-row-main{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.ubi-row-atenea{display:flex;justify-content:center}
+.ubi-row-atenea .ubi-card{width:100%;max-width:calc(50% - 1.5px)}
 .ubi-card{background:var(--bg3);display:flex;flex-direction:column}
 .ubi-map{height:340px;overflow:hidden;position:relative}
 .ubi-map iframe{width:100%;height:100%;border:none;filter:grayscale(100%) brightness(.8)}
@@ -517,7 +520,8 @@ h1.sec-h,h2.sec-h{font-family:'Playfair Display','Cinzel',serif}
 @media(max-width:900px){
   
   
-  .ubi-grid{grid-template-columns:1fr}
+  .ubi-row-main{grid-template-columns:1fr}
+  .ubi-row-atenea .ubi-card{max-width:100%}
   .videos-grid{grid-template-columns:1fr}
   
   
@@ -696,10 +700,11 @@ a[href^="tel"]{color:var(--gold)!important;text-decoration:none}
 @media(max-width:1100px){
   
   
-  .ubi-grid{grid-template-columns:1fr}
-  
+  .ubi-row-main{grid-template-columns:1fr}
+  .ubi-row-atenea .ubi-card{max-width:100%}
+
   .planes-header-grid{grid-template-columns:1fr}
-  
+
 }
 @media(max-width:768px){
   
@@ -872,7 +877,9 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
     justify-content:center;
   }
   /* Secciones en móvil */
-  .ubi-grid,.sucursales-tabs,.planes-grid,.planes-header-grid{
+  .ubi-row-main{grid-template-columns:1fr}
+  .ubi-row-atenea .ubi-card{max-width:100%}
+  .sucursales-tabs,.planes-grid,.planes-header-grid{
     grid-template-columns:1fr;
   }
   
@@ -1017,14 +1024,25 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
 <section id="ubicaciones">
   <div><div class="sec-label r">Nuestros Olimpos</div><h2 class="sec-h r">Elige tu<br><em>Templo</em></h2><p class="sec-sub r">Cada sucursal tiene su propia energía, pero una misma misión: Ayudar a convertirte en tu mejor versión.</p></div>
   <div class="ubi-grid">
+   <div class="ubi-row-main">
     <div class="ubi-card r">
       <div class="ubi-map"><a href="sucursal-serdan.html"><img src="imgs/ggserdan.jpg" alt="Instalaciones Greek Gym Serdán" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 43%;filter:brightness(.8) saturate(.85);transition:transform .5s"></a></div>
-      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">01</div><div><div class="ubi-name"><a href="sucursal-serdan.html" style="color:inherit;text-decoration:none">Greek Gym - Serdán</a></div></div></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>C. 55 Nte. 2806, Ampliación Francisco I. Madero, Aquiles Serdán, 72140 Puebla</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>Lun–Vie: 05:30–22:30 · Sáb y Dom: 07:00–19:00</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></span><span>220 275 7573</span></div><div class="ubi-chips"><span class="ubi-chip">Estacionamiento</span><span class="ubi-chip">Regaderas</span><span class="ubi-chip">Ring de Box</span></div><a href="sucursal-serdan.html" class="ubi-link">Ver Sucursal →</a></div>
+      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">01</div><div><div class="ubi-name"><a href="sucursal-serdan.html" style="color:inherit;text-decoration:none">Greek Gym - Serdán</a></div></div></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>C. 55 Nte. 2806, Ampliación Francisco I. Madero, Aquiles Serdán, 72140 Puebla</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>Lun–Vie: 05:30–22:30 · Sáb y Dom: 07:00–19:00</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></span><span>220 275 7573</span></div><div class="ubi-chips"><span class="ubi-chip">Estacionamiento</span><span class="ubi-chip">Regaderas</span><span class="ubi-chip">Cafetería</span></div><a href="sucursal-serdan.html" class="ubi-link">Ver Sucursal →</a></div>
     </div>
     <div class="ubi-card r">
       <div class="ubi-map"><a href="sucursal-zeus.html"><img src="imgs/ggzeus.jpg" alt="Instalaciones Greek Gym Zeus" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top center;filter:brightness(.8) saturate(.85);transition:transform .5s"></a></div>
-      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">02</div><div><div class="ubi-name"><a href="sucursal-zeus.html" style="color:inherit;text-decoration:none">Greek Gym - Zeus</a></div></div></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>C. 4 Sur 714, Libertad, 72130 Heroica Puebla de Zaragoza</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>Lun–Vie: 05:30–22:30 · Sáb y Dom: 07:00–19:00</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></span><span>220 533 3473</span></div><div class="ubi-chips"><span class="ubi-chip">Estacionamiento</span><span class="ubi-chip">Regaderas</span><span class="ubi-chip">Cafetería</span><span class="ubi-chip">Tienda</span></div><a href="sucursal-zeus.html" class="ubi-link">Ver Sucursal →</a></div>
+      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">02</div><div><div class="ubi-name"><a href="sucursal-zeus.html" style="color:inherit;text-decoration:none">Greek Gym - Zeus</a></div></div></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>C. 4 Sur 714, Libertad, 72130 Heroica Puebla de Zaragoza</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span>Lun–Vie: 05:30–22:30 · Sáb y Dom: 07:00–19:00</span></div><div class="ubi-row"><span class="ubi-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.58 4.1 2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.07-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/></svg></span><span>220 533 3473</span></div><div class="ubi-chips"><span class="ubi-chip">Estacionamiento</span><span class="ubi-chip">Regaderas</span><span class="ubi-chip">Cafetería</span></div><a href="sucursal-zeus.html" class="ubi-link">Ver Sucursal →</a></div>
     </div>
+   </div>
+   <div class="ubi-row-atenea">
+    <div class="ubi-card r d2">
+      <div class="ubi-map">
+        <img src="imgs/fotos-sucursal-atenea/gg_atenea.jpeg" alt="Greek Gym Atenea" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(.85)">
+        <div class="plan-badge" style="top:16px">Próximamente</div>
+      </div>
+      <div class="ubi-body"><div class="ubi-top"><div class="ubi-num">03</div><div><div class="ubi-name">Greek Gym - Atenea</div></div></div></div>
+    </div>
+   </div>
   </div>
 </section>
 
@@ -1716,9 +1734,13 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
       <!-- Actions -->
       <div style="display:flex; flex-direction:column; gap:.75rem; width:100%; max-width:320px;">
   
-  <a href="greek-food.html" class="btn-gold"
+  <a href="menu_gf.pdf" target="_blank" rel="noopener" class="btn-gold"
      style="width:100%; box-sizing:border-box; justify-content:center; text-align:center; display:flex; align-items:center;">
     Ver Menú
+  </a>
+  <a href="greek-food.html" class="btn-outline-gold"
+     style="width:100%; box-sizing:border-box; justify-content:center; text-align:center; display:flex; align-items:center;">
+    Ver Página de Greek Food
   </a>
 
 </div>
@@ -1737,11 +1759,6 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
     <h2 class="sec-h r" style="text-align:center;margin:0 auto">#<em>Comunidad Greek</em></h2>
   </div>
   <div class="videos-gold-line r"><span>Resultados reales · Comunidad real</span></div>
-
-  <div style="display:flex;align-items:center;justify-content:center;gap:.6rem;margin:0 0 .75rem">
-    <button class="plan-carousel-arrow" aria-label="Videos anteriores" onclick="videoNav(-1)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <button class="plan-carousel-arrow" aria-label="Videos siguientes" onclick="videoNav(1)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-  </div>
 
   <div id="videosCarousel" class="videos-carousel">
     <div class="video-card r d1" data-categoria="spinning">
@@ -1857,13 +1874,13 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   </div>
 
   <!-- Gallery subsection -->
-  <!--div style="padding:0 0 4rem">
+  <div style="padding:0 0 4rem">
     <div class="galeria-header">
     <div>
       <div class="sec-label r">Comunidad</div>
     </div>
     <a href="https://www.instagram.com/greek_gym_/" class="btn-ghost r">Ver en Instagram ↗</a>
-    </div-->
+    </div>
 <div class="galeria-track-wrap">
     <div class="galeria-track" id="galleryTrack">
       <div class="galeria-item"><img src="imgs/prototipo/greeks1.jpg" alt="Publicación de la comunidad Greek Gym en Instagram — foto 1" loading="lazy"></div>
@@ -1932,7 +1949,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   </div>
   <div class="footer-line"></div>
   <div class="footer-bottom">
-    <span style="display:inline-flex;align-items:center;gap:.35rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Puebla, México · 2 Sucursales</span>
+    <span style="display:inline-flex;align-items:center;gap:.35rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Puebla, México · 3 Sucursales</span>
     <span>© 2026 Greek Gym · Todos los derechos reservados</span>
     <a href="https://www.instagram.com/greek_gym_/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--gold);font-family:'Kanit',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.55rem 1.1rem;border:1px solid rgba(219,166,94,.4);border-radius:999px;transition:all .25s" onmouseenter="this.style.background='var(--gold)';this.style.color='#000'" onmouseleave="this.style.background='none';this.style.color='var(--gold)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>Síguenos en Instagram</a>
   </div>
@@ -1941,7 +1958,7 @@ nav.solid{background:rgba(8,6,4,.97);backdrop-filter:blur(16px);box-shadow:0 1px
   <div class="footer-stats-bar">
     <div class="fstat">
       <svg viewBox="0 0 24 24"><path d="M12 2L2 7h20L12 2zm-7 5v10H3v2h18v-2h-2V7H5zm2 10V7h2v10H7zm4 0V7h2v10h-2zm4 0V7h2v10h-2z"/></svg>
-      <div><span class="fstat-n">2 Sucursales</span><span class="fstat-s">En Puebla</span></div>
+      <div><span class="fstat-n">3 Sucursales</span><span class="fstat-s">En Puebla</span></div>
     </div>
     <div class="fstat-sep"></div>
     <div class="fstat">
@@ -1983,7 +2000,13 @@ document.querySelectorAll('.nav-menu a').forEach(a=>a.addEventListener('click', 
 
 // Reveal on scroll
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}}),{threshold:.1,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+document.querySelectorAll('.r').forEach(el=>{
+  // Las cards del carrusel de Planes se muestran/ocultan según el auto-scroll horizontal,
+  // no según el scroll vertical de la página: el fade-in con transition-delay hacía que
+  // tardaran en aparecer (o quedaran invisibles) cada vez que el carrusel avanzaba.
+  if(el.closest('.planes-carousel')){ el.classList.add('v'); return; }
+  obs.observe(el);
+});
 
 // Video play/pause on click
 ['v1','v2','v3'].forEach(id=>{
@@ -2329,13 +2352,6 @@ heroObserver.observe(hero);
   outer.addEventListener('mouseleave', function(){ isPaused = false; startAuto(); });
   outer.addEventListener('touchstart', function(){ isPaused = true; stopAuto(); }, {passive:true});
   outer.addEventListener('touchend', pauseAndResumeLater);
-
-  // Flechas: actualiza índice + pausa 5 seg
-  window.videoNav = function(dir){
-    currentIndex = Math.max(0, Math.min(totalCards - 1, currentIndex + dir));
-    outer.scrollTo({left: currentIndex * cardW(), behavior:'smooth'});
-    pauseAndResumeLater();
-  };
 
   startAuto();
 })();
